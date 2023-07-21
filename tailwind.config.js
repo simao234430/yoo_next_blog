@@ -1,4 +1,14 @@
 /** @type {import('tailwindcss').Config} */
+
+const colors = require('tailwindcss/colors');
+
+const linkHeadingStyles = {
+  color: colors.gray[100],
+  borderBottomColor: 'transparent',
+  '&:hover': {
+    color: `${colors.gray[900]}`,
+  },
+};
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -6,9 +16,12 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+ 
   theme: {
-    extend: {},
+    extend: {
+    },
   },
+ 
   plugins: [require('@tailwindcss/typography')],
   darkMode: 'class',
 }

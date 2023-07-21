@@ -47,7 +47,7 @@ By implementing debounce, we can optimize the performance of our API calls by de
 
 ## Here's a classic debounce implementation
 
-```js title="debounce.js" {1-3,4}
+```js showLineNumbers title="debounce.js" {1-3,4}
 const debounce = (callback, wait) => {
   let timeoutId = null;
 
@@ -88,7 +88,7 @@ const debounce = (callback, wait) => {
 
 ### Step 2:
 
-```js {4, 7}
+```js showLineNumbers {4, 7}
 const debounce = (callback, wait) => {
   // Schedule a timeout, based on the `wait` argument we provide.
   // `wait` will be in milliseconds.

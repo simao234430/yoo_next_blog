@@ -45,7 +45,7 @@ div[data-rehype-pretty-code-fragment] .line {
 div[data-rehype-pretty-code-fragment] .line--highlighted {
   border-left: 4px solid rgb(56 189 248);
   background-color: rgba(55, 65, 81, 0.5);
-  margin-left: -18.5px;
+
   margin-right: -20px;
 }
 
@@ -53,11 +53,19 @@ div[data-rehype-pretty-code-fragment] .line--highlighted > :first-child {
   margin-left: 20px;
 }
 
-/* code[data-line-numbers] {
+code[data-line-numbers] {
   counter-reset: lineNumber;
-} */
+}
 
-
+code[data-line-numbers] .line::before {
+  counter-increment: lineNumber;
+  content: counter(lineNumber);
+  display: inline-block;
+  text-align: right;
+  margin-right: 0.75rem;
+  width: 1rem;
+  color: rgb(255 255 255 / 0.2);
+}
 
 div[data-rehype-pretty-code-fragment] code {
   display: grid;
@@ -76,40 +84,3 @@ div[data-rehype-pretty-code-fragment] code {
     padding: 1rem 0;
   }
 }
-
-pre > code {
-  display: grid;
-}
-
-code {
-  counter-reset: line;
-}
-
-code > [data-line]::before {
-  counter-increment: line;
-  content: counter(line);
- 
-  /* Other styling */
-  display: inline-block;
-  width: 1rem;
-  margin-right: 2rem;
-  text-align: right;
-  color: gray;
-}
-code > [data-highlighted-line] {
-  background-color: rgba(55, 65, 81, 0.5);
-  border-left: 4px solid #38bdf8;
-  margin-left: -18.5px;
-  margin-right: -20px;
-}
-
-code > [data-highlighted-line]::before {
-  counter-increment: line;
-  content: counter(line);
-  display: inline-block;
-  text-align: right;
-  margin-right: 0.75rem;
-  width: 1rem;
-  color: rgb(255 255 255 / 0.2);
-}
- 
