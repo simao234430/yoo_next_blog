@@ -23,6 +23,12 @@ const navItems: NavItems = {
   '/blog': {
     name: 'Blog',
   },
+  '/examples': {
+    name: 'examples',
+  },
+  '/docs': {
+    name: 'docs',
+  },
 };
 
 export default function Navbar() {

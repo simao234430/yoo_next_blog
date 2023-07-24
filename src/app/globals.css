@@ -26,13 +26,6 @@ body {
   max-height: calc(100vh - var(--navbar-height) - 2rem);
 }
 
-/* Remove Safari input shadow on mobile */
-input[type='text'],
-input[type='email'] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
 
 .prose :where(code):not(:where([class~='not-prose'] *)) {
   background: rgba(115, 125, 140, 0.15);

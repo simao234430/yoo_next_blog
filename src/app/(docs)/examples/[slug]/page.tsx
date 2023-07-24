@@ -1,11 +1,10 @@
- 
-import { allPosts } from 'contentlayer/generated';
+import { allExamples} from 'contentlayer/generated';
  
 import { notFound } from 'next/navigation';
 import { Params } from '@/src/app/types';
  
 import MarkdownContent from '@/src/app/components/common/MDXComponents';
-import Sidebar from '@/src/app/components/Sidebar';
+import {ExampleSidebar} from '@/src/app/components/Sidebar';
 import { createOgImage } from '@/src/app/components/libs/createOGImage';
 import randomFiveDigitNumber from '@/src/app/components/libs/generateFiveDigitNumber';
 import type { Metadata } from 'next';
@@ -14,7 +13,7 @@ export async function generateMetadata({
 }: {
   params: Params;
 }): Promise<Metadata> {
-  const post = allPosts.find((post) => post.slug === params.slug);
+  const post = allExamples.find((post) => post.slug === params.slug);
   const ogImage = createOgImage({
     title: post?.title || '',
     meta: [post?.summary].join(''),
@@ -45,21 +44,21 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  return allPosts.map((post) => ({
+  return allExamples.map((post) => ({
     slug: post.slug,
   }));
 }
 
 
 export default function PostPage({ params }: { params: Params }) {
-  const post = allPosts.find((post) => post.slug === params.slug);
+  const post = allExamples.find((post) => post.slug === params.slug);
 
   if (!post) {
     notFound();
   }
   return (
     <div className="lg:grid lg:grid-cols-12">
-      <Sidebar />
+      {/* <ExampleSidebar /> */}
       <div className="md:col-span-7 prose prose-slate dark:prose-invert prose-a:text-sky-500 dark:prose-p:text-slate-400 md:text-lg sm:mx-auto py-4 md:p-0">
         <header className="mb-4">
           <h1 className="mb-0 dark:text-zinc-100 text-3xl md:text-4xl font-semibold tracking-tight">

@@ -1,9 +1,10 @@
 import './globals.css'
+import 'antd/dist/antd.css'
 import type { Metadata } from 'next'
 import Navbar from '@/src/app/components/Navbar';
 import { Providers } from './providers';
 import Footer from '@/src/app/components/Footer';
-
+ 
  
 export const metadata: Metadata = {
   title: 'Create Next App',
