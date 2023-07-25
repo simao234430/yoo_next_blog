@@ -78,15 +78,7 @@ export default function PostPage({ params }: { params: Params }) {
           <MarkdownContent code={post.body.code} />
         </article>
 
-        <footer>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href={`https://github.com/FrozenHearth/portfolio/blob/main/content/posts/${post.slug}.mdx`}
-          >
-            View on Github
-          </a>
-        </footer>
+ 
       </div>
     </div>
   );

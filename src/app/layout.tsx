@@ -20,10 +20,15 @@ export default function RootLayout({
       <body className="dark:bg-[#1f2028] bg-white antialiased min-h-screen flex flex-col">
         <Providers>
           <Navbar />
-          <main className="flex-auto min-w-0 md:mt-0 flex flex-col md:pt-12 mx-[6vw] md:mx-[10vw] 2xl:mx-[20vw] justify-center">
+
+
+          <div className="flex min-h-screen flex-col justify-between">
+          <main className="relative flex-auto min-w-0 md:mt-0 flex flex-col justify-center" style={{ scrollPaddingTop: '150px' }}>
             {children}
           </main>
           <Footer />
+        </div>
+  
         </Providers>
       </body>
     </html>

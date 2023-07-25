@@ -27,8 +27,8 @@ export function BlogSidebar() {
 
 export function DocSidebar() {
   return (
-    <aside className="hidden lg:block col-span-3 pr-4 sticky-top-sidebar overflow-y-auto">
-      <nav>
+    <aside  className="fixed py-8 h-[calc(100%-9rem)] w-[16rem] overflow-auto">
+  <nav className="flex flex-col space-y-6 pb-4">
         <h1 className="mb-0 dark:text-zinc-100 text-xl md:text-2xl font-bold tracking-tight">
           Recent posts
         </h1>
